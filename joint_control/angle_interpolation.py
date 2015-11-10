@@ -40,14 +40,11 @@ class AngleInterpolationAgent(PIDAgent):
         self.starttime = -1
 
     def think(self, perception):
-        target_joints = self.angle_interpolation(self.keyframes)
+        target_joints = self.angle_interpolation(self.keyframes, perception)
         self.target_joints.update(target_joints)
         return super(AngleInterpolationAgent, self).think(perception)
 
-    def bernstein(i,n,t):
-            return comp(n,i) * (t**(i)) * ((1-t)**(n-i))
-
-    def angle_interpolation(self, keyframes):
+    def angle_interpolation(self, keyframes, perception):
         target_joints = {}
 
         if self.starttime == -1:
