@@ -21,7 +21,7 @@
 
 
 from pid import PIDAgent
-from keyframes import hello,leftBackToStand,wipe_forehead
+from keyframes import hello,leftBackToStand,wipe_forehead,leftBellyToStand
 import numpy as np
 from scipy.misc import comb
 from matplotlib import pyplot as plt

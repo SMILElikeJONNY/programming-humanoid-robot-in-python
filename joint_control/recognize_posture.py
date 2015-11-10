@@ -12,6 +12,8 @@
 
 from angle_interpolation import AngleInterpolationAgent
 from keyframes import hello
+import pickle
+from sklearn import svm
 
 
 class PostureRecognitionAgent(AngleInterpolationAgent):
@@ -29,12 +31,15 @@ class PostureRecognitionAgent(AngleInterpolationAgent):
         return super(PostureRecognitionAgent, self).think(perception)
 
     def recognize_posture(self, perception):
-        posture = 'unknown'
-        # YOUR CODE HERE
-
+        posture = 'inknown'
+        
+        data = pickle.load(open('robot_pose_data/Back'))
+        
+        
+       
         return posture
 
 if __name__ == '__main__':
-    agent = AngleInterpolationAgent()
+    agent = PostureRecognitionAgent()
     agent.keyframes = hello()  # CHANGE DIFFERENT KEYFRAMES
     agent.run()
