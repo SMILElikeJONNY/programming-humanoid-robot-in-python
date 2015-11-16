@@ -120,10 +120,7 @@ class AngleInterpolationAgent(PIDAgent):
 
                     
                     #some Joints are inversed
-                    if names[joint] in INVERSED_JOINTS:
-                        target_joints[names[joint]] = c[1]*-1
-                    else:
-                        target_joints[names[joint]] = c[1]
+                    target_joints[names[joint]] = c[1]
 
         return target_joints
        
@@ -132,5 +129,5 @@ class AngleInterpolationAgent(PIDAgent):
 
 if __name__ == '__main__':
     agent = AngleInterpolationAgent()
-    agent.keyframes = leftBackToStand()  # CHANGE DIFFERENT KEYFRAMES
+    agent.keyframes =hello()  # CHANGE DIFFERENT KEYFRAMES
     agent.run()
